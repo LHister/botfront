@@ -1,0 +1,492 @@
+:root{
+    --dark: #000;
+    --green: #0f0;
+    --green-ch: chartreuse;
+    --grey: #111111e1;
+    --grey-menu: #252323;
+    --light: #fff;
+    --red: #f00;
+    --blue: #00f;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+
+body{
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--green) transparent;
+
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--green); 
+}
+
+.main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(45deg ,var(--dark),var(--grey-menu),var(--dark));
+}
+
+.main .header{
+    width: 100%;
+    height: 4em;
+    color: var(--green);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .header .login{
+    width: 5em;
+    height: 2.5em;
+    position: absolute;
+    left: 3em;
+    border: 2px solid var(--green);
+    border-radius: 2em;
+    color: var(--green);
+    background-color: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.main .header .login:nth-child(2){
+    left: 10em;
+}
+
+.main .header .login:hover{
+    background-color: var(--green-ch);
+    color: var(--dark);
+    border: 4px solid var(--dark);
+    transition: 0.3s linear;
+}
+
+.main .container{
+    width: 80%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2em;
+    box-shadow: 10px 10px 8px 8px var(--dark);
+    z-index: 2;
+    background-color: var(--grey-menu);
+    position: relative;
+}
+
+.main .container .message-container{
+    width: 92%;
+    padding-right: 5%;
+    height: 95%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.main .container .container-header{
+    position: sticky;
+    width: 100%;
+    height: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--red);
+    font-size: 1.2em;
+    font-weight: bolder;
+    font-family: "Ubuntu", sans-serif;
+    font-style: italic;
+    margin-bottom: 0.5;
+    z-index: 3;
+}
+
+.main .container .message-container .message{
+    width: 50%;
+    height: 13em;
+    border-radius: 2em;
+}
+
+.main .container .message-container .message.bot{
+    margin: 1.5em 1.5em 0em 50%;
+}
+
+.main .container .message-container .message .titles{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 40%;
+    height: 20%;
+}
+
+.main .container .message-container .message.bot .titles{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 110%;
+    justify-content: end;
+}
+
+.main .container .message-container .message .titles .logo{
+    color: var(--light);
+    font-size: 4em;
+}
+
+.main .container .message-container .message .titles .logo i{
+    border-radius: 100%;
+    border: 4px solid var(--dark);
+    transition: 0.5s linear;
+    margin-right: 0.2em;
+    cursor:cell;
+}
+
+.main .container .message-container .message.bot .titles .logo i{
+    border: none;
+    color: var(--blue);
+}
+
+.main .container .message-container .message.bot .titles .logo i{
+    margin-left: 0.2em;
+    margin-right: 0;
+}
+
+.main .container .message-container .message .titles .logo i:hover{
+    border: 2px solid var(--green);
+}
+
+.main .container .message-container .message .titles .sender{
+    color: var(--red);
+    font-size: 1.3em;
+    font-weight: bolder;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+} 
+
+.main .container .message-container .message .message-content{
+    font-family: "Ubuntu", sans-serif;
+    font-style: normal;
+    font-weight: bolder;
+    margin-left: 3em;
+    padding: 0 2em 0em 1em;
+    width: 100%;
+    min-height: 5em;
+    height: max-content;
+    border:2px solid var(--green);
+    border-radius: 2em;
+    word-wrap: break-word;
+}
+
+.main .container .message-container .message.bot .message-content{
+    margin-top: 0.5em;
+    margin-left: -3em;
+}
+
+.main .container .message-container .message .message-content .message-info{
+    color: var(--light);
+    width: 95%;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
+.main .container .message-container .message .date{
+    color: var(--red);
+    font-size: 1.2em;
+    font-weight: bolder;
+    font-family: "Ubuntu", sans-serif;
+    font-style: normal;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-top: 0.5em;
+}
+
+.main .container .message-container .message.bot .date{
+    margin-left: 10%;
+    width: 90%;
+    justify-content: start;
+    flex-direction: row-reverse;
+}
+
+.main .container .message-container .message .date i{
+    margin: 0 0.5em ;
+}
+
+.main .inputs{
+    width: 80vw;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0%;
+}
+
+.main .inputs .form.active{
+    border: 3px solid var(--green);
+}
+
+.main .inputs .form.active #message-container::placeholder{
+    color: var(--green);
+}
+
+.main .inputs .form{
+    width: 75%;
+    height: 3em;
+    border: solid var(--light);
+    border-radius: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 15px 15px 45px 15px var(--dark);
+    z-index: 2;
+}
+
+#message-container{
+    width: 75%;
+    margin-left: 5%;
+    height: 2.3em;
+    border: none;
+    background: none;
+    color: var(--light);
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bolder;
+}
+
+#message-container:focus{
+    outline: none;
+}
+
+.main .inputs .form .send-btn{
+    width: 17%;
+    height: 2.5em;
+    background: none;
+    border-radius: 2em;
+    color: var(--light);
+    cursor: pointer;
+    transition: 0.5s linear;
+}
+
+.main .inputs .form .send-btn:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid var(--green);
+    color: var(--green);
+}
+
+.main .footer{
+    border-top:solid var(--red);
+    width: 100vw;
+    height: 7%;
+    background-color: var(--grey-menu);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: -7%;
+}
+
+.main .footer .ct span{
+    color: var(--red);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-size: 1.1em;
+    font-weight: bolder;
+    margin-left: 2em;
+}
+
+.main .footer .ct em{
+    color: var(--light);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-size: 1.1em;
+    font-weight: bolder;
+    margin-left: 0.1dvh;
+}
+
+.main .footer .ct em::before{
+    content: "";
+    position: absolute;
+    top: 25%;
+    width: 0.5em;
+    height: 2em;
+    background-color: var(--red);
+    animation: range 2s linear infinite;
+}
+
+@keyframes range{
+    0%{
+        left: 11em;
+    }
+    50%{
+        left: 16em;
+    }
+    100%{
+        left: 11em;
+    }
+}
+
+.social-l
+{
+    width: fit-content;
+    margin-right: 2em;
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.social-l .link-item
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5em;
+    cursor: pointer;
+    margin: 0 0.7em;
+    position: relative;
+    transition: 0.2s linear;
+    width: 2.6em;
+    height: 2.6em;
+}
+
+
+.social-l .link-item a
+{
+    color: var(--white);
+    font-size: 1.7em;
+    width: 92%;
+    height: 92%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 3px solid var(--grey-menu);
+    text-decoration: none;
+}
+
+
+.social-l .link-item .link-details
+{
+    display: none;
+    color: var(--light);
+    position: absolute;
+    right: 10%;
+}
+
+.social-l .link-item:hover .link-details{
+    display: block;
+    animation: smouthappeir 1s linear 1 forwards;
+}
+
+.social-l .link-item:nth-child(1)
+{
+    background-color: #0026d1;
+}
+
+.social-l .link-item:nth-child(2)
+{
+    background-color: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+.social-l .link-item:nth-child(3)
+{
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgb(171, 142, 197) 50%, rgb(0, 0, 0) 100%);;
+}
+
+.social-l .link-item:nth-child(4)
+{
+    background: linear-gradient(90deg, rgb(7, 8, 20) 0%, rgb(12, 9, 161) 50%, rgb(0, 0, 0) 100%);;
+}
+
+.social-l .link-item:hover
+{
+    padding:0 6em 0 0em;
+}
+
+@keyframes smouthappeir{
+    0%{
+        visibility: hidden;
+    }
+    20%{
+        visibility: hidden;
+    }
+    100%{
+        visibility: visible;
+    }
+}
+
+@media (max-width: 600px) {
+    .main .header{
+        width: 100vw;
+        height: 3em;
+    }
+    
+    .main .header .login{
+        position: absolute;
+        left: 1em;
+    }
+
+    .main .container{
+        width: 95%;
+        height: 75%;
+    }    
+
+    .main .inputs .form{
+        width:100vw;
+    }
+    
+    #message-container{
+        width: 70vw;
+        margin-left: 3%;
+    }
+
+    .main .inputs .form .send-btn{
+        width: 25%;
+    }
+
+    .main .footer{
+        width: 100vw;
+        height: 15%;
+        bottom: -15%;
+    }
+    
+    .main .container .message-container .message .titles{
+        font-size: 0.9em;
+    }
+
+    .main .container .message-container .message .titles .logo{
+        color: var(--light);
+        font-size: 2.7em;
+    }
+    
+    .main .footer .ct{
+        position: absolute;
+        top: 1em;
+    }
+
+    .main .footer .social-l{
+        height: 10vh;
+        position: absolute;
+        bottom: 0;
+        right: 13%;
+    }
+
+}
